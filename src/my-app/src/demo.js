@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom';
+
 let Web3 = require('web3');
 
 let abi = JSON.parse('[{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"constant":false,"inputs":[{"internalType":"uint256","name":"n","type":"uint256"},{"internalType":"string","name":"t","type":"string"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"internalType":"uint256","name":"","type":"uint256"},{"internalType":"string","name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}]');
-let address = "0xa25842C2c4532B6e5aa1A3A3B04C15D3911b4c8f"
+let address = "0xa25842C2c4532B6e5aa1A3A3B04C15D3911b4c8f";
 
 class DataForm extends React.Component {
 
