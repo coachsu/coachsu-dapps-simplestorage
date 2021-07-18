@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Switch from '@material-ui/core/Switch';
 
 let Web3 = require('web3');
 
@@ -52,7 +53,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             num: 0,
-            text: 'Waiting...'
+            text: 'Waiting...',
+            swithChangeChecked: false,
         };
     }
 
@@ -66,9 +68,17 @@ class App extends React.Component {
         }
     }
 
+    handleSwithChange = (event) => {
+        this.setState({ swithChangeChecked: event.target.checked });
+    }
+
     render() {
         return (
             <div>
+                <Switch
+                    checked={this.state.swithChangeChecked}
+                    onChange={this.handleSwithChange}
+                />
                 <div id="title">
                     <h1>Simple Storage on Blockchain</h1>
                 </div>
