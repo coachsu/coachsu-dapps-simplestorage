@@ -109,6 +109,10 @@ class App extends React.Component {
                     (this.state.swithChangeChecked)
                         ? (
                             <React.Fragment>
+                                <Box sx={{ "mt": 2 }}>
+                                    <Typography variant="h5">Simple Storage</Typography>
+                                    <Typography variant="h6">Blockchain</Typography>
+                                </Box>
                                 <Paper sx={{ "p": 2, "mt": 2 }}>
                                     <Stack spacing={2} divider={<Divider flexItem />}>
                                         <Box
