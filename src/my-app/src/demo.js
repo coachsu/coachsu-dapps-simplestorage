@@ -109,55 +109,63 @@ class App extends React.Component {
                     (this.state.swithChangeChecked)
                         ? (
                             <React.Fragment>
-                                <Paper sx={{ "mt": 4 }}>
-                                    <Box
-                                        display="flex"
-                                        justifyContent="center"
-                                        alignItems="center"
-                                        p={2}
-                                    >
-                                        <Grid container>
-                                            <Grid item xs={10}>
-                                                <Stack spacing={2} divider={<Divider flexItem />}>
-                                                    <Typography variant="body2" component="span">{this.state.num}</Typography>
-                                                    <Typography variant="body2" component="span">{this.state.text}</Typography>
-                                                </Stack>
-                                            </Grid>
-                                            <Grid item xs={2} sx={{ "display": "flex", "justify-content": "center", "align-items": "center" }}>
-                                                <Button variant="outlined" onClick={this.getData}>Get Storage</Button>
-                                            </Grid>
-                                        </Grid>
-                                    </Box>
+                                <Paper sx={{ "p": 2, "mt": 2 }}>
+                                    <Stack spacing={2} divider={<Divider flexItem />}>
+                                        <Box
+                                            component="form"
+                                            display="flex"
+                                            justifyContent="space-around"
+                                            alignItems="center"
+                                            sx={{ "column-gap": "16px" }}
+                                        >
+                                            <TextField
+                                                label="Read Only"
+                                                defaultValue={this.state.num}
+                                                InputProps={{
+                                                    readOnly: true,
+                                                }}
+                                                variant="filled"
+                                                sx={{ "width": "50%" }}
+                                            />
+                                            <TextField
+                                                label="Read Only"
+                                                defaultValue={this.state.text}
+                                                InputProps={{
+                                                    readOnly: true,
+                                                }}
+                                                variant="filled"
+                                                sx={{ "width": "50%" }}
+                                            />
+                                        </Box>
+                                        <Button variant="outlined" onClick={this.getData}>Get Storage</Button>
+                                    </Stack>
                                 </Paper>
-                                <Paper sx={{ "mt": 4 }}>
-                                    <Box
-                                        display="flex"
-                                        justifyContent="center"
-                                        alignItems="center"
-                                        p={2}
-                                    >
-                                        <Grid container>
-                                            <Grid item xs={10}>
-                                                <Stack spacing={2} divider={<Divider flexItem />}>
-                                                    <TextField
-                                                        label="num"
-                                                        variant="outlined"
-                                                        value={this.state.textFieldNum}
-                                                        onChange={(event) => this.handleTextFieldChange(event, "textFieldNum")}
-                                                    />
-                                                    <TextField
-                                                        label="text"
-                                                        variant="outlined"
-                                                        value={this.state.textFieldText}
-                                                        onChange={(event) => this.handleTextFieldChange(event, "textFieldText")}
-                                                    />
-                                                </Stack>
-                                            </Grid>
-                                            <Grid item xs={2} sx={{ "display": "flex", "justify-content": "center", "align-items": "center" }}>
-                                                <Button variant="outlined">Set Storage</Button>
-                                            </Grid>
-                                        </Grid>
-                                    </Box>
+                                <Paper sx={{ "p": 2, "mt": 4 }}>
+                                    <Stack spacing={2} divider={<Divider flexItem />}>
+                                        <Box
+                                            component="form"
+                                            display="flex"
+                                            justifyContent="space-around"
+                                            alignItems="center"
+                                            sx={{ "column-gap": "16px" }}
+                                        >
+                                            <TextField
+                                                label="num"
+                                                value={this.state.textFieldNum}
+                                                onChange={(event) => this.handleTextFieldChange(event, "textFieldNum")}
+                                                variant="outlined"
+                                                sx={{ "width": "50%" }}
+                                            />
+                                            <TextField
+                                                label="text"
+                                                value={this.state.textFieldText}
+                                                onChange={(event) => this.handleTextFieldChange(event, "textFieldText")}
+                                                variant="outlined"
+                                                sx={{ "width": "50%" }}
+                                            />
+                                        </Box>
+                                        <Button variant="outlined">Set Storage</Button>
+                                    </Stack>
                                 </Paper>
                             </React.Fragment>
                         )
