@@ -71,6 +71,7 @@ class App extends React.Component {
             textFieldText: '',
             swithChangeChecked: false,
         };
+        this.setData = this.setData.bind(this);
     }
 
     async getData() {
@@ -80,6 +81,17 @@ class App extends React.Component {
             const contract = new web3.eth.Contract(abi, address);
             const data = await contract.methods.get().call();
             this.setState({ num: data[0], text: data[1] });
+        }
+    }
+
+    async setData() {
+        if (typeof window.ethereum !== 'undefined') {
+            console.log('MetaMask is installed')
+            const web3 = new Web3(window.ethereum);
+            let sender = await window.ethereum.request({ method: 'eth_requestAccounts' })
+            sender = web3.utils.toChecksumAddress(sender[0]);
+            const contract = new web3.eth.Contract(abi, address);
+            await contract.methods.set(this.state.textFieldNum, this.state.textFieldText).send({ 'to': address, 'from': sender });
         }
     }
 
@@ -94,7 +106,7 @@ class App extends React.Component {
             ...this.state,
             [targetProp]: event.target.value
         });
-    };
+    }
 
     //
 
@@ -168,7 +180,7 @@ class App extends React.Component {
                                                 sx={{ "width": "50%" }}
                                             />
                                         </Box>
-                                        <Button variant="outlined">Set Storage</Button>
+                                        <Button variant="outlined" onClick={this.setData}>Set Storage</Button>
                                     </Stack>
                                 </Paper>
                             </React.Fragment>
