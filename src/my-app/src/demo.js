@@ -120,7 +120,7 @@ class App extends React.Component {
                                             display="flex"
                                             justifyContent="space-around"
                                             alignItems="center"
-                                            sx={{ "column-gap": "16px" }}
+                                            sx={{ "columnGap": "16px" }}
                                         >
                                             <TextField
                                                 label="Read Only"
@@ -151,7 +151,7 @@ class App extends React.Component {
                                             display="flex"
                                             justifyContent="space-around"
                                             alignItems="center"
-                                            sx={{ "column-gap": "16px" }}
+                                            sx={{ "columnGap": "16px" }}
                                         >
                                             <TextField
                                                 label="num"
