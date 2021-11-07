@@ -71,6 +71,7 @@ class App extends React.Component {
             textFieldText: '',
             swithChangeChecked: false,
         };
+        this.getData = this.getData.bind(this);
         this.setData = this.setData.bind(this);
     }
 
